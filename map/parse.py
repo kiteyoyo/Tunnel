@@ -1,9 +1,11 @@
 import csv
 import json
+from pprint import pprint
 
-csvfile = open('DATA_Traffic_Vehicle Detector_info (1).csv', 'r')
-
-for row in csv.reader(csvfile):
-
-	print json.dumps({"addr":[row[1], row[2]], "text":row[0]})
-	print ","
+with open('data.json') as data_file:    
+    data = json.load(data_file)
+    locations = data["cwbopendata"]["location"]
+    result = [];
+    for place in locations:
+    	result.append({"addr": [place['lat'], place['lon']], "text": place['locationName'], "icon": "images/bluePin.png"})
+    print json.dumps(result)
