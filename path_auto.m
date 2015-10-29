@@ -1,5 +1,10 @@
-function path=path_auto(m, d)
-p=strcat('/home/mcl/math/traffic/2015_', num2str(m));
-p=strcat(p, '_');
+function path=path_auto(m, d,method)
+
+p=strcat(num2str(m), '_');
 p=strcat(p, num2str(d));
-path=strcat(p, '/');
+p=strcat(p, '/');
+if method==1
+    path=strcat('/home/mcl/math/traffic/2015_', p);
+else
+    path=strcat('/home/mcl/math/Weather/2015_', p);
+end

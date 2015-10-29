@@ -1,2 +1,2 @@
-addpath /home/mcl/math/Tunnel/matlab/matlab-json/
+addpath ./matlab-json/
  json.startup
