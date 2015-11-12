@@ -1,5 +1,4 @@
 function [O B C]=reg(I,is_N)
-I=repair(I);
 if is_N
     s=[1,14,39];
     e=[10,36,76];
@@ -19,7 +18,7 @@ else
 end
 for i=1:3
     whos location
-    loc=location(s(i):e(i));
+    loclocation(s(i):e(i));
     A=I(s(i):e(i), :);
     [s1 s2]=size(A);
     A

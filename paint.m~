@@ -1,5 +1,6 @@
-function paint(A, is_N, remove_gateway,number)
+function paint(A, B, is_N, remove_gateway,number)
 [A location]=regular(A,is_N,remove_gateway);
+[ location]=regular(A,is_N,remove_gateway);
 time=A(1, :);
 A(1, :)=[];
 fh=figure;
@@ -10,6 +11,7 @@ if number>1
     plot(time,A)
 else
     mesh(time, location, A)
+    mesh(time, location, B)
 end
 xlabel('time')
 ylabel('location')

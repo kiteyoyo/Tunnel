@@ -1,7 +1,9 @@
-function day_plot(n,v,number)
-n=n(number,:);
-v=v(number,:);
-for i=1:8457
-    plot(n(i), v(i),'*');
+function day_plot(N,V,number)
+n=N(number,:);
+v=V(number,:);
+[s1 s2]=size(v);
+for i=1:s2
+    plot(n(i), v(i),'x');
     hold on;
+    %text(n(i), v(i),datestr(V(1,i),15));
 end

@@ -1,0 +1,8 @@
+function t=get_time(n)
+year=floor(n/1e14)
+month=floor(mod(n,1e14)/1e12)
+day=floor(mod(n,1e12)/1e10)
+hour=floor(mod(n,1e10)/1e8)
+min=floor(mod(n,1e8)/1e6)
+sec=floor(mod(n,1e6)/1e4)
+t=datenum([year, month, day, hour, min, sec])
