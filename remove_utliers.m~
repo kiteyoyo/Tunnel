@@ -1,0 +1,30 @@
+function remove_utliers(all,n)
+for i=1:(1440
+    am=all(i);
+    a=am{1};
+    mid_a=median(a);
+    b=abs(a-mid_a);
+    mid_b=median(b);
+    p=mid_b/0.6745;
+    c=b./p;
+    t=(i-1)/288;
+    [s1 s2]=size(c);
+    for j=1:s2
+        if c(j)==mid_a
+            plot(t,a(j),'*r')
+        else
+            plot(t,a(j),'*b')
+        end
+        hold on;
+%         if c(j)<1
+%             plot(t,a(j),'*b');
+%             hold on;
+%         end
+    end
+    fprintf('%d\n',i);
+end
+
+plot(tj,mj,'r-');
+xlabel('time')
+ylabel('number')
+datetick('x', 'HH:MM')
