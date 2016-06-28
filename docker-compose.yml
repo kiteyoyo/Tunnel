@@ -18,8 +18,8 @@ tunnel-laravel:
         tunnel-laravel
     restart:
         always
-    image:
-        mclweb_mcl-web
+    build:
+        ./build-laravel
     volumes:
         - ./volume-laravel:/var/www/laravel
     #ports:
