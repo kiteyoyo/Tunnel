@@ -1,0 +1,7 @@
+########################################################
+Traceback (most recent call last):
+  File "/var/service/volumes/tunnel-django/trips/api.py", line 259, in saveData
+    [time, li]=self.getData(path, url)
+  File "/var/service/volumes/tunnel-django/trips/api.py", line 238, in getData
+    xml=self.getdata(path, url).getElementsByTagName('Info')
+ExpatError: unclosed token: line 17986, column 4

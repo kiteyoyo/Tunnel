@@ -1,0 +1,20 @@
+--2016-06-28 11:17:01--  http://tisvcloud.freeway.gov.tw/vd_value.xml.gz
+Resolving tisvcloud.freeway.gov.tw (tisvcloud.freeway.gov.tw)... 210.241.131.253
+Connecting to tisvcloud.freeway.gov.tw (tisvcloud.freeway.gov.tw)|210.241.131.253|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 90428 (88K) [application/x-gzip]
+Saving to: ‘/home/engineer/docker/tunnel/django-volume/trips/data/vd/vd_value.xml.gz.25135’
+
+     0K .......... .......... .......... .......... .......... 56% 3.74M 0s
+    50K .......... .......... .......... ........             100% 3.48M=0.02s
+
+2016-06-28 11:17:02 (3.62 MB/s) - ‘/home/engineer/docker/tunnel/django-volume/trips/data/vd/vd_value.xml.gz.25135’ saved [90428/90428]
+
+Traceback (most recent call last):
+  File "/var/service/volumes/tunnel-django/trips/api.py", line 319, in <module>
+    a.saveData(url='http://tisvcloud.freeway.gov.tw/vd_value.xml.gz')
+  File "/var/service/volumes/tunnel-django/trips/api.py", line 271, in saveData
+    self.moveError(path)
+  File "/var/service/volumes/tunnel-django/trips/api.py", line 168, in moveError
+    li=os.listdir(Api.purposePath)
+OSError: [Errno 2] No such file or directory: '/home/engineer/docker/tunnel/django-volume/trips/data/error/'

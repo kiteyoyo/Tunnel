@@ -1,0 +1,27 @@
+tunnel-django:
+    container_name:
+        tunnel-django
+    restart:
+        always
+    image:
+        django:1.8.5-python2
+    volumes:
+        - ./volume-django:/usr/src/app
+    #ports:
+    #    - "8000:8000"
+    working_dir:
+        /usr/src/app
+    command:
+        bash -c "pip install django-cors-headers && python manage.py runserver 0.0.0.0:80"
+tunnel-laravel:
+    container_name:
+        tunnel-laravel
+    restart:
+        always
+    image:
+        mclweb_mcl-web
+    volumes:
+        - ./volume-laravel:/var/www/laravel
+    #ports:
+    #    - "8080:80"
+
